@@ -23,14 +23,11 @@
         }
         .left, .list {
             width: 100%;
-            /* height: 100%; */
         }
         .list {
             padding-left: 5%;
             user-select: none;
             cursor: pointer;
-            /* height: 100px;
-            overflow: scroll; */
         }
         .box {
             margin: 40px auto;
@@ -44,8 +41,6 @@
             width: 100%;
         }
         .drag {
-            /* position: absolute; */
-            /* width: auto; */
             cursor: pointer;
         }
     </style>
@@ -64,13 +59,8 @@
             </ul>
         </div>
     </div>
-    <div class="sad">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum eligendi error sit alias perferendis velit optio quaerat facilis, fugiat voluptate eaque corporis sapiente doloribus nemo cumque ratione ducimus rerum!</div>
-    <script src="javascript/dragAll.js"></script>
+    <script src="../drag/drag.js"></script>
     <script>
-        // alert('onmousedown' in document.querySelector('.box'));
-        // document.querySelector('.box').addEventListener('touchstart', function() {
-        //     alert('down');
-        // });
         var drag = new Drag({dragEle: '.drag', tarEle: '.box', 
                             onStart: function(e) {
                                 e.innerHTML = "我被抓到了";
