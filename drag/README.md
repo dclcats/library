@@ -1,6 +1,9 @@
-# library
 
 ## js实现拖动操作
+
+[demo][1] （请在移动端打开或者模拟移动端打开）
+手机请扫
+![drag demo 地址二维码][2]
 
 ### 初始化
 
@@ -112,3 +115,6 @@ Drag.prototype.checkPos = function(type, e) {
 致此整个移动过程都已实现
 
 此处只是指出思路，具体执行过程根据自己的项目情况进行相应的调整
+
+  [1]: https://dclcats.github.io/library/examples/index.html
+  [2]: /examples/img/1502175937.png "drag demo 地址二维码"
