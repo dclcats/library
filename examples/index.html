@@ -61,14 +61,16 @@
                 <em class="drag" data-num="02">drag02</em>
                 <em class="drag" data-num="03">drag03</em>
                 <em class="drag" data-num="04">drag04</em>
-                <em class="drag" data-num="05">drag05</em>
-                <em class="drag" data-num="06">drag06</em>
-                <em class="drag" data-num="07">drag07</em>
             </ul>
         </div>
     </div>
-    <script src="../drag/drag.js"></script>
+    <div class="sad">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae illum eligendi error sit alias perferendis velit optio quaerat facilis, fugiat voluptate eaque corporis sapiente doloribus nemo cumque ratione ducimus rerum!</div>
+    <script src="javascript/dragAll.js"></script>
     <script>
+        // alert('onmousedown' in document.querySelector('.box'));
+        // document.querySelector('.box').addEventListener('touchstart', function() {
+        //     alert('down');
+        // });
         var drag = new Drag({dragEle: '.drag', tarEle: '.box', 
                             onStart: function(e) {
                                 e.innerHTML = "我被抓到了";
