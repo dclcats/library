@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-app-web-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DRAG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .content {
+            width: 80%;
+            height: 100%;
+            margin: 40px auto 0;
+        }
+        .left, .list {
+            width: 100%;
+            /* height: 100%; */
+        }
+        .list {
+            padding-left: 5%;
+            user-select: none;
+            cursor: pointer;
+            /* height: 100px;
+            overflow: scroll; */
+        }
+        .box {
+            margin: 40px auto;
+            width: 200px;
+            height: 200px;
+            background: url("img/aaaaa.png") no-repeat;
+            background-size: contain;
+            opacity: .5;
+        }
+        .list ul li {
+            width: 100%;
+        }
+        .drag {
+            /* position: absolute; */
+            /* width: auto; */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            <div class="box"></div>
+        </div>
+        <div class="list">
+            <ul>
+                <em class="drag" data-num="01">drag01</em>
+                <em class="drag" data-num="02">drag02</em>
+                <em class="drag" data-num="03">drag03</em>
+                <em class="drag" data-num="04">drag04</em>
+                <em class="drag" data-num="05">drag05</em>
+                <em class="drag" data-num="06">drag06</em>
+                <em class="drag" data-num="07">drag07</em>
+            </ul>
+        </div>
+    </div>
+    <script src="/drag/drag.js"></script>
+    <script>
+        var drag = new Drag({dragEle: '.drag', tarEle: '.box', 
+                            onStart: function(e) {
+                                e.innerHTML = "我被抓到了";
+                            },
+                            onMove: function(e) {
+                                e.innerHTML = "我在移动";
+                                // console.log('move');
+                            }, 
+                            onMoveIn: function(e) {
+                                e.style.cssText = "opacity: 1;"
+                            }, 
+                            onEnd: function(e) {
+                                e.innerHTML = "我已移入目标区域";
+                                e.style.cssText += "display: none;"
+                            },                
+                        });
+    </script>
+</body>
+</html>
