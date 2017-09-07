@@ -15,5 +15,5 @@ PC端有`drag`事件的存在，而移动端不支持，此处实现在移动端
 
 
   [1]: https://dclcats.github.io/library/examples/index.html
-  [2]: ./examples/img/1502175937.png "drag demo 地址二维码"
+  [2]: ./drag/images/1502175937.png "drag demo 地址二维码"
   [3]: https://github.com/dclcats/library/tree/master/drag
