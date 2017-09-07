@@ -7,6 +7,9 @@
 
 ![drag demo 地址二维码][2]
 
+注意： 某些安卓机型不能很好的支持 `forEach` , 所以考虑兼容性尽量不要使用 `forEach` 可以使用 `for` 循环代替
+已知不支持 `forEach` 的机型及浏览器： 华为 H30 默认浏览器及该机型下的UC浏览器
+
 ### 初始化
 
 就像盖房子需要打地基一样，写程序实现一个功能需要初始化。
@@ -119,4 +122,4 @@ Drag.prototype.checkPos = function(type, e) {
 此处只是指出思路，具体执行过程根据自己的项目情况进行相应的调整
 
   [1]: https://dclcats.github.io/library/examples/index.html
-  [2]: /examples/img/1502175937.png "drag demo 地址二维码"
+  [2]: images/1502175937.png "drag demo 地址二维码"
