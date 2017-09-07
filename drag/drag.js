@@ -35,10 +35,15 @@ onEnd：拖动结束时拖动元素到达目标位置执行函数，参数为被
 		
 		//需拖动的元素
 		this.dragEle = typeof this.opts.dragEle === "string" ? this.$(this.opts.dragEle) : this.opts.dragEle;
-		if(!!this.dragEle.length) {
-			this.dragEle.forEach(function(v,i) {
-				this.addEvent(v);
-			}, this);
+		var len = this.dragEle.length
+		if(!!len) {
+			for (var i = len - 1; i >= 0; i--) {
+				this.addEvent(this.dragEle[i])
+			}
+			// this.dragEle.forEach(function(v,i) {
+			// 	alert('listener')
+			// 	this.addEvent(v);
+			// }, this);
 		} else {
 			this.addEvent(this.dragEle);
 		}
@@ -58,9 +63,12 @@ onEnd：拖动结束时拖动元素到达目标位置执行函数，参数为被
 	}
 
 	Drag.prototype.addEvent = function(e) {
-		eventArr.forEach(function(v, i) {
-			e.addEventListener(v, this[v].bind(this), false);
-		}, this);
+		for (var i = eventArr.length - 1; i >= 0; i--) {
+			e.addEventListener(eventArr[i], this[eventArr[i]].bind(this), false);
+		}
+		// eventArr.forEach(function(v, i) {
+		// 	e.addEventListener(v, this[v].bind(this), false);
+		// }, this);
 	}
 
 	Drag.prototype.touchstart = function(e) {
@@ -117,7 +125,7 @@ onEnd：拖动结束时拖动元素到达目标位置执行函数，参数为被
 			e.style.cssText = '';
 			return;
 		}
-		e.style.cssText += 'position: absolute;-webkit-transform: translate('+x+'px,'+y+'px)';
+		e.style.cssText += 'position: absolute;-webkit-transform: translate('+x+'px,'+y+'px);-moz-transform: translate('+x+'px,'+y+'px);-o-transform: translate('+x+'px,'+y+'px);-ms-transform: translate('+x+'px,'+y+'px);';
 	}
 
 	Drag.prototype.checkOver = function(moveX, moveY) {

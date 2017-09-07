@@ -15,6 +15,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            -webkit-user-select: none;
         }
         .content {
             width: 80%;
@@ -37,10 +38,8 @@
             background-size: contain;
             opacity: .5;
         }
-        .list ul li {
-            width: 100%;
-        }
         .drag {
+        	display: inline-block;
             cursor: pointer;
         }
     </style>
@@ -51,12 +50,12 @@
             <div class="box"></div>
         </div>
         <div class="list">
-            <ul>
+            <div>
                 <em class="drag" data-num="01">drag01</em>
                 <em class="drag" data-num="02">drag02</em>
                 <em class="drag" data-num="03">drag03</em>
                 <em class="drag" data-num="04">drag04</em>
-            </ul>
+            </div>
         </div>
     </div>
     <script src="../drag/drag.js"></script>
